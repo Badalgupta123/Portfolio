@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+* {
+  font-family: 'Saira', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --color-dark-100: #1a1a1a;
+  --color-dark-200: #1f1f1f;
+  --color-dark-300: #2d2d2d;
+  --color-dark-400: #3d3d3d;
+  --color-purple: #8B5CF6;
+  --color-pink: #EC4899;
+  --color-blue: #3B82F6;
+}
+
+/* ─── Typewriter ─── */
+.typewriter {
+  overflow: hidden;
+  border-right: 0.15em solid #8B5CF6;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 3s steps(17, end) forwards, blink-caret 0.75s step-end 4;
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 14ch; }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #8B5CF6; }
+}
+
+/* ─── Section heading gradient separator ─── */
+.section-title-bar {
+  width: 60px;
+  height: 4px;
+  margin: 0 auto 3rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #8B5CF6, #EC4899);
+  animation: barPulse 3s ease-in-out infinite;
+}
+@keyframes barPulse {
+  0%, 100% { opacity: 1; width: 60px; }
+  50%       { opacity: 0.6; width: 90px; }
+}
+
+/* ─── Card glow on hover ─── */
+.card-glow {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card-glow:hover {
+  box-shadow: 0 0 24px 2px rgba(139, 92, 246, 0.35);
+  transform: translateY(-8px);
+}
+
+/* ─── Contact input glow on focus ─── */
+.input-glow {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.input-glow:focus {
+  outline: none;
+  border-color: #8B5CF6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+/* ─── Subtle dot-grid pattern for sections ─── */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(139,92,246,0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
